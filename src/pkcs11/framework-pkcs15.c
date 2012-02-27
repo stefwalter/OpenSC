@@ -945,7 +945,7 @@ static CK_RV pkcs15_create_tokens(struct sc_pkcs11_card *p11card)
 	/* Match up related keys and certificates */
 	pkcs15_bind_related_objects(fw_data);
 
-	if (hack_enabled)
+	if (hack_enabled && auth_count > 0)
 		auth_count = 1;
 
 	for (i = 0; i < auth_count; i++) {
